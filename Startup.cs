@@ -35,7 +35,8 @@ namespace Signing_In
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationContext>()
                 .AddDefaultTokenProviders();
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson();
+                services.AddAutoMapper(typeof(Startup));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Signing_In", Version = "v1" });
